@@ -2,6 +2,8 @@
 
 Ts = 10*10^-3; 
 Fs = 1/Ts;
+samples = x(1:1000);
+
 
 [X,f] = fdomain(samples,Fs);
 

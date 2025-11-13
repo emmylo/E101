@@ -1,3 +1,4 @@
+% Problem 4
 Ts = 10*10^-3; 
 Fs = 1/Ts;
 

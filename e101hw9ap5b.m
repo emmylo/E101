@@ -1,25 +1,25 @@
 
-a0 = 3;
-A = 5;
+%101 hw9a question 5 partb
 
+translatedx = x'; 
+
+%get x2 
+x1 = x(1:(length(x)-1)); %so this makes x shorter by 1 which shifts it to the right
+%now add a 0 back 
+x2 = [0,x1']; % size should be 1x3233
+subtracted = x'- x2; %substract x2 from original x' (to get 1x3233 dimension) 
+%gets difference between one value and the next
+%need to look at when the value in subtracted is around 5. (positive only)
+
+countit = subtracted > 4.9949 ;
+
+thetotal = sum(countit)  
+a0 = 3; % mean value 
+A = 5; %amplitude of sample data
 
 d = a0/A;
 k = 1:4;
 
-check = 0;
-counter = 0;
+N0 = length(x)/thetotal;
 
-for i = 1:length(x)
-    if x(i) == 0
-        check = 1;
-    elseif check == 1 & x(i) == A
-        counter = counter + 1;
-        check = 0;
-    elseif check == 1
-        check = 0;
-    end
-end
-
-N0 = counter/length(x);
-
-ak = abs((A.*sin(k.*pi*d))./(N0.*sin(k.*pi/N0)));
+ak = abs((A.*sin(k.*pi*d))./(N0.*sin(k.*pi/N0)))
